@@ -92,6 +92,7 @@
     <Content Include="Content\contact.css" />
     <Content Include="Content\donations.css" />
     <Content Include="Content\home.css" />
+    <Content Include="Content\Images\LungisaLogo.png" />
     <Content Include="Content\news.css" />
     <Content Include="Content\services.css" />
     <Content Include="Content\Site.css" />
@@ -126,7 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
