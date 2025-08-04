@@ -30,7 +30,7 @@
         z-index: -1; /* Keep image behind the text */
     }
 
-    /* This ensures every child sits above the pseudo-element */
+    /* ---------- Keep all the content above the image ---------- */
     .hero > * {
         position: relative;
         z-index: 1;
