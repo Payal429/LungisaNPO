@@ -96,6 +96,7 @@
     <Content Include="Content\Images\blackbackground.jpg" />
     <Content Include="Content\Images\community-contact2.jpg" />
     <Content Include="Content\Images\community.png" />
+    <Content Include="Content\Images\contact-us.jpg" />
     <Content Include="Content\Images\empathy.png" />
     <Content Include="Content\Images\FAQ3.jpg" />
     <Content Include="Content\Images\hero-img.jpg" />
