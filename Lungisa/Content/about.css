@@ -149,8 +149,8 @@
     background: linear-gradient(135deg, #ed1f1f 0%, 100%);
     text-align: center;
 }
-    .modern-investment h1 {
-        font-size: 36px;
+    .modern-investment h2 {
+        font-size: 28px;
         font-weight: 700;
         color: black;
         margin-bottom: 25px;
@@ -251,7 +251,7 @@
     margin-right: -50vw;
 }
     .team h2 {
-        font-size: 34px;
+        font-size: 28px;
         font-weight: 700;
         margin-bottom: 50px;
         color: black;
