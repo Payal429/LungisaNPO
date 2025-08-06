@@ -40,5 +40,13 @@ namespace Lungisa.Controllers
         {
             return View();
         }
+        public ActionResult Projects()
+        {
+            return View();
+        }
+        public ActionResult AdminDashboard()
+        {
+            return View();
+        }
     }
 }
