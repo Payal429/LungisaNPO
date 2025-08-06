@@ -1,4 +1,8 @@
-﻿@{
+﻿<!-- Payal and Nyanda -->
+<!-- 06 August 2025 -->
+<!-- The Admin Dashboard page of the Lungisa NPO website is a central hub to oversee every aspect of Lungisa’s operations—manage projects, 
+    donations, users, news, events and volunteer sign-ups from one intuitive interface. -->
+@{
     ViewBag.Title = "Admin Dashboard";
     Layout = null;
 }
@@ -16,6 +20,7 @@
 <!-- Links -->
 <link rel="stylesheet" href="~/Content/admin.css" />
 <link rel="stylesheet" href="~/Content/Site.css" />
+<link rel="icon" type="image/png" sizes="32x32" href="~/Content/Images/LOGOLungisa.png">
 
 <!-- Google fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -23,6 +28,9 @@
 <body>
     <!-- ================= HEADER ================= -->
     <header>
+        <a class="logo" href="/">
+            <img src="~/Content/Images/LungisaLogo.png" alt="Lungisa Logo">
+        </a>
         <h1>Admin Dashboard</h1>
         <p>Manage Lungisa’s back-office in one place.</p>
     </header>
@@ -37,7 +45,7 @@
                 <div class="icon"><i class="material-icons">folder</i></div>
                 <h3>Projects</h3>
                 <p>Create, edit or delete organisational projects and assign managers.</p>
-                <a class="card-btn" href="/admin/projects">Manage Projects</a>
+                <a class="card-btn" href="~/Views/Admin/ProjectsForm.cshtml">Manage Projects</a>
             </div>
         </div>
         <!-- ================= 2. DONATIONS ================= -->
@@ -91,6 +99,22 @@
             </div>
         </div>
     </div>
-
 </body>
+
+
+<!-- LOADING OVERLAY -->
+<!--<div id="loading-overlay">
+    <div class="loader-box">
+        <img src="https://lungisa.org.za/Content/Images/LOGOLungisa.png" alt="Lungisa" class="loader-logo">
+        <div class="spinner"></div>
+        <p>Loading dashboard…</p>
+    </div>
+</div>
+
+<script>/* Hide overlay as soon as DOM + images are ready */
+  window.addEventListener('load', () => {
+    const overlay = document.getElementById('loading-overlay');
+    overlay.style.opacity = 0;
+    setTimeout(() => overlay.remove(), 400); /* match CSS transition */
+  });</script>-->
 </html>

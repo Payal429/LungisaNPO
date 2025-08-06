@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <header>
+        <h1>Manage User Accounts</h1>
+        <p>Create, edit or deactivate staff and volunteer logins.</p>
+    </header>
+
+    <div class="container">
+        <section class="section-card">
+            <h2>Add New User</h2>
+            <form>
+                <div class="form-group"><label>Full Name</label><input type="text" required></div>
+                <div class="form-group"><label>Email</label><input type="email" required></div>
+                <div class="form-group">
+                    <label>Role</label>
+                    <select>
+                        <option>Administrator</option>
+                        <option>Manager</option>
+                        <option>Volunteer</option>
+                    </select>
+                </div>
+                <button class="btn">Create Account</button>
+            </form>
+        </section>
+
+        <section class="section-card">
+            <h2>All Users</h2>
+            <table>
+                <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td>John Mokoena</td>
+                        <td>john@lungisa.org.za</td>
+                        <td>Administrator</td>
+                        <td>Active</td>
+                        <td><a class="btn" href="#">Edit</a> <a class="btn" style="background:#ef4444">Deactivate</a></td>
+                    </tr>
+                    <tr>
+                        <td>Sipho Dlamini</td>
+                        <td>sipho@lungisa.org.za</td>
+                        <td>Manager</td>
+                        <td>Active</td>
+                        <td><a class="btn" href="#">Edit</a> <a class="btn" style="background:#ef4444">Deactivate</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>

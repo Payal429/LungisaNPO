@@ -1,0 +1,79 @@
+﻿<!-- Payal and Nyanda -->
+<!-- 06 August 2025 -->
+<!--  -->
+
+@{
+    ViewBag.Title = "Volunteer Sign-ups";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Title -->
+    <title>Volunteer Sign-ups</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="~/Content/home.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <!-- ================= HEADER AND NAVIGATION ================= -->
+    <header>
+        <a class="logo" href="/">
+            <img src="~/Content/Images/LungisaLogo.png" alt="Lungisa Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="/Admin/AdminDashboard" class="nav-link">DASHBOARD</a></li>
+                <li><a href="/Home/News" class="nav-link">DONATIONS</a></li>
+                <li><a href="/Admin/ProjectInfo" class="nav-link">PROJECTS</a></li>
+                <li><a href="/Admin/Events" class="nav-link ">EVENTS</a></li>
+                <li><a href="/Home/Contact" class="nav-link">USER ACCOUNTS</a></li>
+                <li><a href="/Home/Contact" class="nav-link">NEWS ARTICLES</a></li>
+                <li><a href="/Admin/Volunteer" class="nav-link active">VOLUNTEER SIGNUPS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="section-card">
+            <h2>All Sign-ups</h2>
+            <table>
+                <thead>
+                    <tr><th>Name</th><th>Email</th><th>Phone</th><th>Event</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Thandi M</td>
+                        <td>thandi@mail.com</td>
+                        <td>0821234567</td>
+                        <td>Health Day</td>
+                        <td>Pending</td>
+                        <td><a class="btn" href="#">Approve</a></td>
+                    </tr>
+                    <tr>
+                        <td>Lerato K</td>
+                        <td>lerato@mail.com</td>
+                        <td>0837654321</td>
+                        <td>Youth Camp</td>
+                        <td>Approved</td>
+                        <td><a class="btn" href="#">Export</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <button class="btn">Export CSV</button>
+        </section>
+    </div>
+</body>
+</html>

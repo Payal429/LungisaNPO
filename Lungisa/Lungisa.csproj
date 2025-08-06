@@ -102,11 +102,13 @@
     <Content Include="Content\Images\FAQ3.jpg" />
     <Content Include="Content\Images\hero-img.jpg" />
     <Content Include="Content\Images\hero_image.png" />
+    <Content Include="Content\Images\LOGOLungisa.png" />
     <Content Include="Content\Images\LungisaLogo.png" />
     <Content Include="Content\Images\primary-care.png" />
     <Content Include="Content\Images\requests2.jpg" />
     <Content Include="Content\Images\youth-day.png" />
     <Content Include="Content\news.css" />
+    <Content Include="Content\projectInfo.css" />
     <Content Include="Content\services.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
@@ -114,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,7 +135,16 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Projects.cshtml" />
-    <Content Include="Views\Home\AdminDashboard.cshtml" />
+    <Content Include="Views\Admin\AdminDashboard.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Volunteer.cshtml" />
+    <Content Include="Views\Admin\Events.cshtml" />
+    <Content Include="Views\Admin\ProjectInfo.cshtml" />
+    <Content Include="Views\Admin\Volunteer.cshtml" />
+    <Content Include="Views\Admin\NewsInfo.cshtml" />
+    <Content Include="Views\Admin\Donations.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,9 +1,4 @@
-﻿body {
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-}
-
+﻿/* ---------- HEADER ---------- */
 header {
     background: black;
     color: white;
@@ -31,6 +26,7 @@ header {
         max-width: 480px;
     }
 
+/* ---------- CONTAINER FOR THE CARDS ---------- */
 .container {
     max-width: auto;
     margin: -40px auto 48px;
@@ -40,6 +36,7 @@ header {
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 }
 
+/* ---------- CARDS ---------- */
 .card {
     background: white;
     border: 3px solid black;
@@ -62,6 +59,7 @@ header {
         object-fit: cover;
     }
 
+/* ---------- CARD BODY (INSIDE THE CARD CONTENT) ---------- */
 .card-body {
     padding: 28px;
     display: flex;
@@ -93,6 +91,8 @@ header {
         margin-bottom: 20px;
         flex: 1
     }
+
+/* ---------- BUTTON FOR CARDS ---------- */
 a .card-btn {
     text-align: center;
 }
@@ -115,6 +115,7 @@ a .card-btn {
         color:white;
     }
 
+/* ---------- RESPONSIVE DESIGN ---------- */
 @media(max-width:600px) {
     .container {
         grid-template-columns: 1fr
