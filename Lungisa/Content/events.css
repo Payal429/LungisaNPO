@@ -1,8 +1,11 @@
 ﻿/* ---------- PAGE WRAPPER ---------- */
 .container {
-    max-width: auto;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 48px 24px;
+    background: #f5f7fa;
+    color: black;
+    line-height: 1.6;
 }
 
 /* ---------- HEADING ---------- */
@@ -11,16 +14,16 @@ h1 {
     font-weight: 700;
     color: black;
     margin-bottom: 8px;
-    text-align:center;
+    text-align: center;
 }
 
 .container > p {
     color: dimgrey;
-    text-align:center;
+    text-align: center;
     margin-bottom: 32px;
 }
 
-/* ---------- CARD ---------- */
+/* ---------- CARDS ---------- */
 .section-card1 {
     background: white;
     border-radius: 10px;
@@ -31,6 +34,7 @@ h1 {
     margin: 0 auto;
     padding: 48px 24px;
 }
+
 .section-card2 {
     background: white;
     border-radius: 10px;
@@ -42,12 +46,12 @@ h1 {
     padding: 48px 24px;
 }
 
-.section-card1 h2, .section-card2 h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: black;
-    margin-bottom: 24px;
-}
+    .section-card1 h2, .section-card2 h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: black;
+        margin-bottom: 24px;
+    }
 
 /* ---------- FORM ---------- */
 .form-group {
@@ -58,22 +62,20 @@ label {
     display: block;
     font-weight: 500;
     margin-bottom: 6px;
-    color: black;
 }
 
-/* ---------- INPUT FIELDS ---------- */
 input, textarea, select {
     width: 100%;
     padding: 12px 16px;
-    border: 1px solid dimgrey;
-    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 14px;
     font-size: 15px;
     transition: border-color .2s;
 }
 
-    input:focus, textarea:focus, select:focus {
+    input:focus, textarea:focus {
         outline: none;
-        border-color: #ed1f1f;
+        border-color: #007C83;
     }
 
 textarea {
@@ -81,20 +83,9 @@ textarea {
     min-height: 100px
 }
 
-/* ---------- DROPDOWN ---------- */
-.dropdown-project {
-    width: 100%;
-    padding: 14px 18px;
-    border: 1px solid dimgrey;
-    border-radius: 10px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: border-color .3s, box-shadow .3s;
-}
-
 /* ---------- BUTTON ---------- */
 .btn-save {
-    width:100%;
+    width: 100%;
     background: #ed1f1f;
     color: #fff;
     padding: 12px 32px;
@@ -105,25 +96,27 @@ textarea {
     cursor: pointer;
     transition: background .25s;
 }
+
     .btn-save:hover {
         background: black;
         color: white;
     }
+
 /* ---------- TABLE ---------- */
 table {
     width: 100%;
-    border-collapse: collapse
+    border-collapse: collapse;
 }
 
     table th, table td {
         padding: 16px;
-        border-bottom: 1px solid #e5e7eb;
         text-align: center;
+        border-bottom: 1px solid #e5e7eb;
     }
 
     table th {
         font-weight: 600;
-        color: black
+        color: black;
     }
 
     table tr:hover {
@@ -138,15 +131,17 @@ table {
         color: #fff;
         border-radius: 10px;
         padding: 12px 32px;
-        text-decoration:none;
+        text-decoration: none;
     }
+
         table .btn-delete:hover, table .btn-edit:hover {
             background: black;
-            color:white;
+            color: white;
         }
-/* ---------- RESPONSIVE ---------- */
+
+/* ---------- RESPONSIVE DESIGN ---------- */
 @media(max-width:600px) {
-    .section-card {
-        padding: 24px
+    .section-card1, .section-card2 {
+        padding: 24px 20px
     }
 }

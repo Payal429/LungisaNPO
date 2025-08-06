@@ -6,16 +6,44 @@
 
 <html>
 <head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+
+    <!-- Title -->
+    <title>Donations List</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="~/Content/projectInfo.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+    <!-- ================= HEADER AND NAVIGATION ================= -->
     <header>
-        <h1>Manage Donations</h1>
-        <p>Track gifts & donor records, issue receipts.</p>
+        <a class="logo" href="/">
+            <img src="~/Content/Images/LungisaLogo.png" alt="Lungisa Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="/Admin/AdminDashboard" class="nav-link">DASHBOARD</a></li>
+                <li><a href="/Admin/Donations" class="nav-link active">DONATIONS</a></li>
+                <li><a href="/Admin/ProjectInfo" class="nav-link ">PROJECTS</a></li>
+                <li><a href="/Admin/Events" class="nav-link">EVENTS</a></li>
+                <li><a href="/Admin/Users" class="nav-link">USER ACCOUNTS</a></li>
+                <li><a href="/Admin/NewsInfo" class="nav-link">NEWS ARTICLES</a></li>
+                <li><a href="/Admin/Volunteer" class="nav-link">VOLUNTEER SIGNUPS</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
+        <h1>Manage Donations</h1>
+        <p>Track gifts & donor records, issue receipts.</p>
         <section class="section-card">
             <h2>Donor Records</h2>
             <table>

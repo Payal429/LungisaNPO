@@ -32,6 +32,10 @@ namespace Lungisa.Controllers
         public ActionResult NewsInfo()
         {
             return View();
+        }        
+        public ActionResult Users()
+        {
+            return View();
         }
     }
 }

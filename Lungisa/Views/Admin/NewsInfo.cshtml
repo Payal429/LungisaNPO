@@ -6,16 +6,44 @@
 
 <html>
 <head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+
+    <!-- Title -->
+    <title>Manage News</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="~/Content/projectInfo.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+    <!-- ================= HEADER AND NAVIGATION ================= -->
     <header>
-        <h1>Post News Articles</h1>
-        <p>Create, schedule and publish stories.</p>
+        <a class="logo" href="/">
+            <img src="~/Content/Images/LungisaLogo.png" alt="Lungisa Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="/Admin/AdminDashboard" class="nav-link">DASHBOARD</a></li>
+                <li><a href="/Admin/Donations" class="nav-link">DONATIONS</a></li>
+                <li><a href="/Admin/ProjectInfo" class="nav-link ">PROJECTS</a></li>
+                <li><a href="/Admin/Events" class="nav-link">EVENTS</a></li>
+                <li><a href="/Admin/Users" class="nav-link">USER ACCOUNTS</a></li>
+                <li><a href="/Admin/NewsInfo" class="nav-link active">NEWS ARTICLES</a></li>
+                <li><a href="/Admin/Volunteer" class="nav-link">VOLUNTEER SIGNUPS</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
+        <h1>Post News Articles</h1>
+        <p>Create, schedule and publish stories.</p>
         <section class="section-card">
             <h2>New Article</h2>
             <form>

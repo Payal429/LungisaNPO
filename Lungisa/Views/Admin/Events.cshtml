@@ -19,7 +19,7 @@
     <title>Events Form</title>
 
     <!-- Links -->
-    <link rel="stylesheet" href="~/Content/home.css" />
+    <link rel="stylesheet" href="~/Content/events.css" />
     <link rel="stylesheet" href="~/Content/Site.css" />
 
     <!-- Google fonts -->
@@ -35,11 +35,11 @@
         <nav>
             <ul>
                 <li><a href="/Admin/AdminDashboard" class="nav-link">DASHBOARD</a></li>
-                <li><a href="/Home/News" class="nav-link">DONATIONS</a></li>
+                <li><a href="/Admin/Donations" class="nav-link">DONATIONS</a></li>
                 <li><a href="/Admin/ProjectInfo" class="nav-link">PROJECTS</a></li>
                 <li><a href="/Admin/Events" class="nav-link active">EVENTS</a></li>
-                <li><a href="/Home/Contact" class="nav-link">USER ACCOUNTS</a></li>
-                <li><a href="/Home/Contact" class="nav-link">NEWS ARTICLES</a></li>
+                <li><a href="/Admin/Users" class="nav-link">USER ACCOUNTS</a></li>
+                <li><a href="/Admin/NewsInfo" class="nav-link">NEWS ARTICLES</a></li>
                 <li><a href="/Admin/Volunteer" class="nav-link">VOLUNTEER SIGNUPS</a></li>
             </ul>
         </nav>
@@ -48,18 +48,19 @@
     <div class="container">
         <h1>Manage Events</h1>
         <p>Add, edit or delete public events.</p>
-        <section class="section-card">
+        <section class="section-card1">
             <h2>New Event</h2>
             <form>
                 <div class="form-group"><label>Event Name</label><input type="text" required></div>
                 <div class="form-group"><label>Date & Time</label><input type="datetime-local" required></div>
                 <div class="form-group"><label>Venue</label><input type="text" required></div>
                 <div class="form-group"><label>Description</label><textarea rows="4" required></textarea></div>
-                <button class="btn">Save Event</button>
+                <button class="btn-save">Save Event</button>
             </form>
         </section>
-
-        <section class="section-card">
+        <br />
+        <br />
+        <section class="section-card2">
             <h2>Upcoming Events</h2>
             <table>
                 <thead><tr><th>Name</th><th>Date</th><th>Venue</th><th>Actions</th></tr></thead>
@@ -68,13 +69,13 @@
                         <td>Community Health Day</td>
                         <td>2025-09-05</td>
                         <td>Community Hall</td>
-                        <td><a class="btn" href="#">Edit</a> <a class="btn" style="background:#ef4444">Delete</a></td>
+                        <td><a class="btn-edit" href="#">Edit</a> <a class="btn-delete">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Youth Skills Camp</td>
                         <td>2025-10-12</td>
                         <td>Outdoor Centre</td>
-                        <td><a class="btn" href="#">Edit</a> <a class="btn" style="background:#ef4444">Delete</a></td>
+                        <td><a class="btn-edit" href="#">Edit</a> <a class="btn-delete">Delete</a></td>
                     </tr>
                 </tbody>
             </table>
