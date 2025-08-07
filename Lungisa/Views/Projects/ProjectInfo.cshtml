@@ -1,0 +1,151 @@
+﻿<!-- Payal and Nyanda -->
+<!-- 06 August 2025 -->
+<!--  -->
+@model List<Lungisa.Models.ProjectModel>
+@{
+    ViewBag.Title = "Manage Projects";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Title -->
+    <title>Projects Form</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="~/Content/projectInfo.css" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ================= HEADER AND NAVIGATION ================= -->
+    <header>
+        <a class="logo" href="/">
+            <img src="~/Content/Images/LungisaLogo.png" alt="Lungisa Logo">
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="/Admin/AdminDashboard" class="nav-link">DASHBOARD</a></li>
+                <li><a href="/Admin/Donations" class="nav-link">DONATIONS</a></li>
+                <li><a href="/Admin/ProjectInfo" class="nav-link active">PROJECTS</a></li>
+                <li><a href="/Admin/Events" class="nav-link">EVENTS</a></li>
+                <li><a href="/Admin/Users" class="nav-link">USER ACCOUNTS</a></li>
+                <li><a href="/Admin/NewsInfo" class="nav-link">NEWS ARTICLES</a></li>
+                <li><a href="/Admin/Volunteer" class="nav-link">VOLUNTEER SIGNUPS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= MANAGE PROJECTS ================= -->
+    <div class="container">
+        <!-- ================= HEADING ================= -->
+        <h1>Manage Projects</h1>
+        <p>Add, edit or delete organisational projects.</p>
+        @if (TempData["Message"] != null)
+        {
+            <script>
+            Swal.fire({
+                title: 'Success!',
+                text: '@TempData["Message"]',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+            </script>
+        }
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        }
+        <section class="section-card1">
+            <!-- ================= FORM ================= -->
+            <h2>Add New Project</h2>
+            <form method="post" action="/Projects/AddProject" enctype="multipart/form-data">
+                <input type="hidden" name="Id" />
+
+                <div class="form-group"><label>Title</label><input name="Title" type="text" required></div>
+                <label for="project-type">Project Type</label>
+                <select id="project-type" name="Type" required>
+                    <option value="" disabled selected>Select a project type</option>
+                    <option value="completed">Completed</option>
+                    <option value="current">Current</option>
+                    <option value="upcoming">Upcoming</option>
+                </select>
+                <br />
+                <div class="form-group"><label>Description</label><textarea name="Description" rows="4" required></textarea></div>
+                <div class="form-group"><label>Start Date</label><input name="StartDate" type="date" required></div>
+                <div class="form-group"><label>End Date</label><input name="EndDate" type="date" required></div>
+                <button class="btn-save" type="submit">Save Project</button>
+            </form>
+        </section>
+        <br />
+        <br />
+        <!-- ================= LIST OF EXISTING PROJECTS ================= -->
+        <section class="section-card2">
+            <h2>Existing Projects</h2>
+
+            @if (Model == null || !Model.Any())
+            {
+                <p style="color:red;">No projects to show!</p>
+            }
+            else
+            {
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <!-- Edit form per row -->
+                                <form method="post" action="/Projects/EditProject">
+                                    <input type="hidden" name="Id" value="@item.Id" />
+                                <td><input type="text" name="Title" value="@item.Title" /></td>
+                                <td><input type="text" name="Type" value="@item.Type" /></td>
+                                <td><textarea name="Description">@item.Description</textarea></td>
+                                <td><input type="date" name="StartDate" value="@item.StartDate.ToString("yyyy-MM-dd")" /></td>
+                                <td><input type="date" name="EndDate" value="@item.EndDate.ToString("yyyy-MM-dd")" /></td>
+                                <td>
+                                    <button class="btn-edit" type="submit">Save</button>
+                                </td>
+                                </form>
+
+                                <!-- Delete form -->
+                                <td>
+                                    <form method="post" action="/Projects/DeleteProject" onsubmit="return confirm('Delete this project?');">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <button class="btn-delete" type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

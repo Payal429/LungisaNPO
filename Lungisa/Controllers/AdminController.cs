@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Lungisa.Controllers
 {
@@ -32,7 +28,7 @@ namespace Lungisa.Controllers
         public ActionResult NewsInfo()
         {
             return View();
-        }        
+        }
         public ActionResult Users()
         {
             return View();

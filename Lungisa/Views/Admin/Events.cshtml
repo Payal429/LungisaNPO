@@ -1,7 +1,7 @@
 ﻿<!-- Payal and Nyanda -->
 <!-- 06 August 2025 -->
 <!--  -->
-
+@model List<Lungisa.Services.FirebaseService.FirebaseEvent>
 @{
     ViewBag.Title = "Events Form";
     Layout = null;
@@ -36,8 +36,8 @@
             <ul>
                 <li><a href="/Admin/AdminDashboard" class="nav-link">DASHBOARD</a></li>
                 <li><a href="/Admin/Donations" class="nav-link">DONATIONS</a></li>
-                <li><a href="/Admin/ProjectInfo" class="nav-link">PROJECTS</a></li>
-                <li><a href="/Admin/Events" class="nav-link active">EVENTS</a></li>
+                <li><a href="/Projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="/Events" class="nav-link active">EVENTS</a></li>
                 <li><a href="/Admin/Users" class="nav-link">USER ACCOUNTS</a></li>
                 <li><a href="/Admin/NewsInfo" class="nav-link">NEWS ARTICLES</a></li>
                 <li><a href="/Admin/Volunteer" class="nav-link">VOLUNTEER SIGNUPS</a></li>
@@ -48,14 +48,112 @@
     <div class="container">
         <h1>Manage Events</h1>
         <p>Add, edit or delete public events.</p>
+
+        @* Show success message *@
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert-success">@ViewBag.Success</div>
+        }
+
         <section class="section-card1">
             <h2>New Event</h2>
-            <form>
-                <div class="form-group"><label>Event Name</label><input type="text" required></div>
-                <div class="form-group"><label>Date & Time</label><input type="datetime-local" required></div>
-                <div class="form-group"><label>Venue</label><input type="text" required></div>
-                <div class="form-group"><label>Description</label><textarea rows="4" required></textarea></div>
-                <button class="btn-save">Save Event</button>
+
+            <form action="/Events/AddEvent" method="post">
+                <div class="form-group">
+                    <label>Event Name</label>
+                    <input name="name" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Date & Time</label>
+                    <input name="dateTime" type="datetime-local" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Venue</label>
+                    <input name="venue" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" rows="4" required></textarea>
+                </div>
+
+                <button class="btn-save" type="submit">Save Event</button>
+            </form>
+        </section>
+
+        <br />
+        <br />
+
+        <section class="section-card2">
+            <h2>Upcoming Events</h2>
+            <table>
+                <thead>
+                    <tr><th>Name</th><th>Date</th><th>Venue</th><th>Actions</th></tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Event.Name</td>
+                                <td>@DateTime.Parse(item.Event.DateTime).ToString("f")</td>
+                                <td>@item.Event.Venue</td>
+                                <td>
+                                    <a class="btn-edit" href="#">Edit</a>
+                                    <a class="btn-delete" href="/Events/Delete/@item.Key" onclick="return confirm('Delete this event?');">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">⚠️ No events found.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+
+
+    @*<div class="container">
+        <h1>Manage Events</h1>
+        <p>Add, edit or delete public events.</p>
+        <section class="section-card1">
+            <h2>New Event</h2>
+
+            @if (TempData["Success"] != null)
+            {
+                <script>alert("@TempData["Success"]");</script>
+            }
+
+            <form action="/Events/AddEvent" method="post">
+                <div class="form-group">
+                    <label>Event Name</label>
+                    <input name="name" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Date & Time</label>
+                    <input name="dateTime" type="datetime-local" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Venue</label>
+                    <input name="venue" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="description" rows="4" required></textarea>
+                </div>
+
+                <button class="btn-save" type="submit">Save Event</button>
             </form>
         </section>
         <br />
@@ -63,24 +161,35 @@
         <section class="section-card2">
             <h2>Upcoming Events</h2>
             <table>
-                <thead><tr><th>Name</th><th>Date</th><th>Venue</th><th>Actions</th></tr></thead>
+                <thead>
+                    <tr><th>Name</th><th>Date</th><th>Venue</th><th>Actions</th></tr>
+                </thead>
                 <tbody>
-                    <tr>
-                        <td>Community Health Day</td>
-                        <td>2025-09-05</td>
-                        <td>Community Hall</td>
-                        <td><a class="btn-edit" href="#">Edit</a> <a class="btn-delete">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <td>Youth Skills Camp</td>
-                        <td>2025-10-12</td>
-                        <td>Outdoor Centre</td>
-                        <td><a class="btn-edit" href="#">Edit</a> <a class="btn-delete">Delete</a></td>
-                    </tr>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Event.Name</td>
+                                <td>@item.Event.DateTime</td>
+                                <td>@item.Event.Venue</td>
+                                <td>
+                                    <a class="btn-edit" href="#">Edit</a>
+                                    <a class="btn-delete" href="/Events/Delete/@item.Key" onclick="return confirm('Delete this event?');">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">⚠️ No events found.</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </section>
-    </div>
+    </div>*@
 
 </body>
 </html>
